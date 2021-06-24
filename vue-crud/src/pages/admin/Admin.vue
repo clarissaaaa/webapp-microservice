@@ -16,7 +16,7 @@
 import Nav from "../../components/Nav.vue";
 import Menu from "../../components/Menu.vue";
 export default {
-  components: { Nav, Menu },
   name: "Admin",
+  components: { Nav, Menu },
 };
 </script>
