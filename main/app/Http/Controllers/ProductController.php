@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\ProductUser;
+use App\Jobs\ProductLiked;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -21,10 +22,12 @@ class ProductController extends Controller
         $user = $response->json();
 
         try{
-            ProductUser::create([
+            $productUser = ProductUser::create([
                 'user_id' => $user['id'],
                 'product_id' => $id
             ]);
+
+            ProductLiked::dispatch($productUser->toArray())->onQueue('admin_queue');
 
             return response([
                 'messsage' => 'success'

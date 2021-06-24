@@ -1,5 +1,8 @@
-POST http://localhost:8001/api/products/13/like
+POST http://localhost:8001/api/products/25/like
 Accept: application/json
 Content-Type: application/json
 
-{}
+{
+    "title": "t",
+    "image": "i"
+}

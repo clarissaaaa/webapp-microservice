@@ -25,7 +25,7 @@ class ProductController extends Controller
     {
         $product = Product::create($request->only('title', 'image'));
 
-        ProductCreated::dispatch($product->toArray());
+        ProductCreated::dispatch($product->toArray())->onQueue('main_queue');
 
         return response($product, Response::HTTP_CREATED);
     }
@@ -36,7 +36,7 @@ class ProductController extends Controller
 
         $product->update($request->only('title', 'image'));
 
-        ProductUpdated::dispatch($product->toArray());
+        ProductUpdated::dispatch($product->toArray())->onQueue('main_queue');
 
         return response($product, Response::HTTP_ACCEPTED);
     }
@@ -45,8 +45,8 @@ class ProductController extends Controller
     {
         Product::destroy($id);
 
-        ProductDeleted::dispatch($id);
-
+        ProductDeleted::dispatch($id)->onQueue('main_queue');
+        
         return response(null, Response::HTTP_NO_CONTENT);
     }
 
