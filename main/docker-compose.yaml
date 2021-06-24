@@ -12,13 +12,13 @@ services:
     depends_on:
       - main_db
 
-    main_queue:
-      build:
-        context: .
-        dockerfile: Dockerfile
-      command: "php artisan queue:work"
-      depends_on:
-        - main_db
+  main_queue:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: "php artisan queue:work"
+    depends_on:
+      - main_db
 
   main_db:
     image: mysql:5.7.22
