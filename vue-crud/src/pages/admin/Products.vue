@@ -1,10 +1,13 @@
 <template>
+  <div class="text-center">
+    <router-link to="/" class="nav-link">Return to main</router-link>
+  </div>
   <div class="pt-3 pb-2 mb-3 border-bottom">
-    <div class="btn-toolbar mb-2 mb-md-0">
+    <div class="btn-toolbar mb-2 mb-md-0 justify-content-center">
       <router-link
         to="/admin/products/create"
         class="btn btn-sm btn-outline-secondary"
-        >Add</router-link
+        >Add New Product</router-link
       >
     </div>
   </div>

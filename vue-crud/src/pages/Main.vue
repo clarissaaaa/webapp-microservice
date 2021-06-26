@@ -1,4 +1,8 @@
 <template>
+  <Promo />
+  <Header />
+  <NavMain />
+  <Menu />
   <main role="main">
     <div class="album py-5 bg-light">
       <div class="container">
@@ -26,14 +30,21 @@
       </div>
     </div>
   </main>
+  <Footer />
 </template>
 
 <script lang="ts">
 import { ref, onMounted } from "vue";
-import { Product } from "../../interfaces/product";
+import { Product } from "../interfaces/product";
+import Header from "../components/Header.vue";
+import Menu from "../components/Menu.vue";
+import Promo from "../components/Promo.vue";
+import NavMain from "../components/NavMain.vue";
+import Footer from "../components/Footer.vue";
 
 export default {
   name: "Main",
+  components: { Header, Menu, Promo, NavMain, Footer },
   setup() {
     const products = ref([] as Product[]);
 

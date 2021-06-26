@@ -3,9 +3,7 @@
 
   <div class="container-fluid">
     <div class="row">
-      <Menu />
-
-      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <main class="justify-content-center">
         <router-view />
       </main>
     </div>
@@ -14,9 +12,9 @@
 
 <script>
 import Nav from "../../components/Nav.vue";
-import Menu from "../../components/Menu.vue";
+
 export default {
   name: "Admin",
-  components: { Nav, Menu },
+  components: { Nav },
 };
 </script>
