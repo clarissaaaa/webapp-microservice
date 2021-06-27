@@ -1,8 +1,3 @@
-POST http://localhost:8000/api/products
+GET http://localhost:8001/api/products/47/like
 Accept: application/json
 Content-Type: application/json
-
-{
-    "title": "test",
-    "image": "image"
-}

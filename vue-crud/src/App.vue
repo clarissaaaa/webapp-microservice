@@ -2,6 +2,12 @@
   <router-view />
 </template>
 
+<script>
+export default {
+  name: "app",
+};
+</script>
+
 <style>
 body {
   font-size: 0.875rem;
